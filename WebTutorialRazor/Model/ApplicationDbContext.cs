@@ -14,5 +14,7 @@ namespace WebTutorialRazor.Model
         }
 
         public DbSet<Book> Book { get; set; }
+        public DbSet<Appointment> Appointment { get; set; }
+
     }
 }

@@ -12,3 +12,33 @@
     </div>
 </div>
 
+<div class="col-12 border p-3 mt-3">
+    <form method="post">
+        @if (Model.Books.Count() > 0) {
+            <table class="table table-striped border">
+                <tr class="table-secondary">
+                    <th><label asp-for="Books.FirstOrDefault().Name"></label></th>
+                    <th><label asp-for="Books.FirstOrDefault().Author"></label></th>
+                    <th><label asp-for="Books.FirstOrDefault().ISBN"></label></th>
+                    <th><label asp-for="Books.FirstOrDefault().Id"></label></th>
+                    <th><label></label></th>
+                    <th><label></label></th>
+                    <th><label></label></th>
+                </tr>
+                @foreach (var book in Model.Books) {
+                    <tr class=" accordion">
+                        <td>@Html.DisplayFor(m => book.Name)</td>
+                        <td>@Html.DisplayFor(m => book.Author)</td>
+                        <td>@Html.DisplayFor(m => book.ISBN)</td>
+                        <td>@Html.DisplayFor(m => book.Id)</td>
+                        <td><a class="btn btn-warning btn-block form-control text-white">Edit</a></td>
+                        <td><a class="btn btn-danger btn-block form-control text-white">Delete</a></td>
+                    </tr>
+                 }
+            </table>
+        }
+        else { 
+            <p>No data available</p>
+        }
+    </form>
+</div>

@@ -13,7 +13,7 @@ namespace WebTutorialRazor.Model
         public int Id { get; set; }
 
         [Required]
-        [DisplayName("Name")]
+        [DisplayName("Namaste")]
         public String Name { get; set; }
 
         public String Author { get; set; }
